@@ -110,7 +110,7 @@ def update_drink(payload, id):
     body = request.get_json()
     title = body.get('title', None)
     recipe = body.get('recipe', None)
-    if not title or not recipe:
+    if not title:
         abort(400)
     drink.title = title
     drink.recipe = json.dumps(recipe)
